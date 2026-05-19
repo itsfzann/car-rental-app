@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Laporan Rental Mobil SMK</title>
+    <link rel="stylesheet" href="../css/laporan.css">
+</head>
+<body>
+
+<div class="container laporan">
+    
+    <div class="nav no-print">
+        <a href="index.html" class="btn-kembali">⬅ Menu Utama</a>
+        <button id="btnCetak" class="btn-cetak">🖨️ Cetak Laporan</button>
+    </div>
+
+    <div id="area-laporan">
+
+        <div class="kop-laporan">
+            <h1>LuxRide Indonesia</h1>
+            <p>Laporan Transaksi Penyewaan Mobil</p>
+            <small>Tahun 2026</small>
+        </div>
+
+        <hr class="garis">
+
+        <table id="tabel-laporan">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Tanggal</th>
+                    <th>Nama Penyewa</th>
+                    <th>Merk</th>
+                    <th>Total Biaya</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="isi-laporan"></tbody>
+        </table>
+
+        <div class="ringkasan">
+            <p><strong>Total Transaksi:</strong> <span id="totalTransaksi">0</span></p>
+        </div>
+
+        <div class="ttd">
+            <div>
+                <p>Mengetahui,</p>
+                <br><br><br>
+                <p><strong>Petugas Rental</strong></p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="https://unpkg.com/dexie/dist/dexie.js"></script>
+<script src="../js/db.js"></script>
+<script>
+async function tampilLaporan() {
+    const transaksi = await db.transaksi.toArray();
+    const mobil = await db.mobil.toArray();
+    const pelanggan = await db.pelanggan.toArray();
+
+    const tabel = document.getElementById('isi-laporan');
+    const totalTransaksi = document.getElementById('totalTransaksi');
+    tabel.innerHTML = "";
+
+    transaksi.forEach((t, i) => {
+
+        const dataMobil = mobil.find(m => m.nopol === t.nopol);
+
+        // Kalau nama kosong, coba cari dari tabel pelanggan
+        let namaPelanggan = t.nama;
+
+        if (!namaPelanggan) {
+            const dataPelanggan = pelanggan.find(p => p.nama === t.nama);
+            namaPelanggan = dataPelanggan ? dataPelanggan.nama : '-';
+        }
+
+        const merkMobil = dataMobil ? dataMobil.merk : '-';
+
+        tabel.innerHTML += `
+            <tr>
+                <td>${i + 1}</td>
+                <td>${t.tgl_pinjam || '-'}</td>
+                <td>${namaPelanggan || '-'}</td>
+                <td>${merkMobil}</td>
+                <td>Rp ${(t.total || 0).toLocaleString()}</td>
+                <td class="${t.status === 'PINJAM' ? 'status-pinjam' : 'status-kembali'}">
+                    ${t.status || '-'}
+                </td>
+            </tr>
+        `;
+    });
+
+    totalTransaksi.textContent = transaksi.length;
+}
+
+document.getElementById('btnCetak').onclick = () => window.print();
+window.onload = tampilLaporan;
+</script>
+</body>
+</html>

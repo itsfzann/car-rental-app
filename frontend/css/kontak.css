@@ -1,0 +1,161 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    min-height: 100vh;
+}
+
+/* Tombol kembali */
+.logout-btn {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    text-decoration: none;
+    background: rgba(255,255,255,0.1);
+    padding: 8px 16px;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 14px;
+    transition: 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.logout-btn:hover {
+    background: gold;
+    color: #000;
+}
+
+/* Section */
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 20px 50px;
+}
+
+.contact-section h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.contact-subtitle {
+    opacity: 0.8;
+    margin-bottom: 40px;
+}
+
+/* Container */
+.contact-container {
+    display: flex;
+    gap: 40px;
+    background: rgba(255,255,255,0.08);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    max-width: 1000px;
+    width: 100%;
+}
+
+/* Contact Info */
+.contact-info {
+    flex: 1;
+}
+
+.contact-info h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    border-bottom: 2px solid gold;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Logo kecil */
+.contact-logo {
+    margin-bottom: 20px;
+}
+
+.contact-logo img {
+    width: 120px; /* Logo lebih kecil */
+    opacity: 0.9;
+}
+
+/* Contact Text */
+.contact-info p {
+    margin: 12px 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Form */
+.contact-form {
+    flex: 1;
+}
+
+.contact-form h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    border-bottom: 2px solid gold;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    background: rgba(255,255,255,0.2);
+}
+
+/* Button */
+.contact-form button {
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: gold;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: orange;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255,215,0,0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+}

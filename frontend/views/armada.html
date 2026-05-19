@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armada Kami</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/armada.css">
+</head>
+<body>
+
+    <div class="container">
+        <a href="user.html" class="btn-kembali">⬅ Menu Utama</a>
+        <h2 class="judul-armada">Armada Kami</h2>
+        <div class="search-wrapper">
+    <div class="search-box">
+        <span>🔍</span>
+        <input type="text" id="searchMobil" placeholder="Cari merk mobil...">
+    </div>
+        <div id="armada-container" class="armada-grid"></div>
+    </div>
+
+    <!-- Library -->
+    <script src="https://unpkg.com/dexie@3/dist/dexie.js"></script>
+    <script src="../js/db.js"></script>
+
+    <!-- File JS Armada -->
+    <script src="../js/armada.js"></script>
+
+</body>
+</html>

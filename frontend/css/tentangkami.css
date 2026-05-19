@@ -1,0 +1,191 @@
+/* ===== GLOBAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #050f23;
+    color: white;
+}
+
+/* ===== HERO ===== */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url("https://images.unsplash.com/photo-1503376780353-7e6692767b70")
+    no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(5,15,35,0.95));
+}
+
+.content {
+    position: relative;
+    text-align: center;
+}
+
+.logo {
+    font-size: 70px;
+    font-weight: bold;
+    letter-spacing: 4px;
+
+    background: linear-gradient(90deg, gold, orange);
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.tagline {
+    margin-top: 10px;
+    color: #ccc;
+    letter-spacing: 2px;
+}
+
+/* ===== ABOUT ===== */
+.about {
+    padding: 80px 20px;
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+}
+
+.about h2 {
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.about p {
+    line-height: 1.8;
+    color: #ddd;
+}
+
+/* ===== STATISTIK ===== */
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 60px 20px;
+    background: #08142e;
+}
+
+.stat-box {
+    text-align: center;
+}
+
+.stat-box h3 {
+    font-size: 40px;
+    color: gold;
+}
+
+.stat-box p {
+    color: #ccc;
+}
+
+/* ===== VISI MISI ===== */
+.visi-misi {
+    display: flex;
+    gap: 40px;
+    padding: 80px 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.vm-box {
+    background: rgba(255,255,255,0.05);
+    padding: 40px;
+    border-radius: 20px;
+    width: 350px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(0,0,0,0.6);
+}
+
+.vm-box h2 {
+    margin-bottom: 20px;
+    color: gold;
+}
+
+.vm-box ul {
+    padding-left: 20px;
+}
+
+.vm-box li {
+    margin-bottom: 10px;
+    color: #ddd;
+}
+
+/* ===== TESTIMONI ===== */
+.testimoni {
+    padding: 80px 20px;
+    text-align: center;
+    background: #08142e;
+}
+
+.testimoni h2 {
+    margin-bottom: 40px;
+}
+
+.testi-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.testi-box {
+    background: rgba(255,255,255,0.05);
+    padding: 30px;
+    width: 280px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    transition: 0.3s;
+}
+
+.testi-box:hover {
+    transform: translateY(-10px);
+}
+
+.testi-box p {
+    color: #ddd;
+    margin-bottom: 15px;
+}
+
+.testi-box h4 {
+    color: gold;
+}
+
+/* ===== BUTTON KEMBALI ===== */
+.back-container {
+    text-align: center;
+    padding: 60px 20px;
+    background: #050f23;
+}
+
+.btn-back {
+    display: inline-block;
+    padding: 14px 35px;
+    border-radius: 40px;
+    background: linear-gradient(90deg, gold, orange);
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.btn-back:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px gold;
+}

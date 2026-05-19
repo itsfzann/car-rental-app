@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LuxRide Indonesia - Customer</title>
+    <link rel="stylesheet" href="../css/user.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo gold-text">LuxRide</div>
+    <nav>
+        <a href="armada.html">Armada</a>
+        <a href="contact.html">Kontak</a>
+        <a href="tentangkami.html">Tentang Kami</a>
+        <a href="login.html" class="btn-logout">Logout</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content fade-in">
+        <h1 class="gold-text">Drive Your Dream Car</h1>
+        <p>Nikmati pengalaman berkendara terbaik bersama LuxRide Indonesia.</p>
+        <div class="hero-buttons">
+            <a href="armada.html" class="btn-primary">Lihat Armada</a>
+            <a href="contact.html" class="btn-secondary">Hubungi Kami</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== INFO SECTION ===== -->
+<section class="info-section fade-in">
+    <div class="info-box">
+        <h3>Mobil Berkualitas</h3>
+        <p>Kami menyediakan berbagai pilihan mobil terbaik dengan kondisi prima.</p>
+    </div>
+    <div class="info-box">
+        <h3>Harga Terjangkau</h3>
+        <p>Harga kompetitif dan transparan tanpa biaya tersembunyi.</p>
+    </div>
+    <div class="info-box">
+        <h3>Layanan 24 Jam</h3>
+        <p>Tim kami siap membantu Anda kapan saja.</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 LuxRide Indonesia | All Rights Reserved</p>
+</footer>
+
+<!-- ===== SCRIPT ANIMATION ===== -->
+<script>
+
+// COUNTER ANIMATION
+const counters = document.querySelectorAll('.counter');
+
+counters.forEach(counter => {
+    const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const current = +counter.innerText;
+        const increment = target / 100;
+
+        if (current < target) {
+            counter.innerText = Math.ceil(current + increment);
+            setTimeout(updateCount, 20);
+        } else {
+            counter.innerText = target + "+";
+        }
+    };
+
+    updateCount();
+});
+
+// FADE IN ON SCROLL
+const faders = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+    threshold: 0.2
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer){
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+    });
+}, appearOptions);
+
+faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Transaksi Penyewaan Mobil - LuxRide Indonesia</title>
+    <link rel="stylesheet" href="../css/transaksi.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">🚗 LuxRide Indonesia</div>
+    <nav>
+        <a href="index.html">Menu Utama</a>
+        <a href="mobil.html">Data Mobil</a>
+        <a href="transaksi.html" class="active">Transaksi</a>
+    </nav>
+</header>
+
+<main class="container">
+
+    <!-- FORM SEWA -->
+    <section class="card">
+        <h2>📋 Formulir Penyewaan Mobil</h2>
+
+        <div class="form-grid">
+            <div class="form-group">
+                <label>Pilih Mobil</label>
+                <select id="s-mobil"></select>
+            </div>
+
+            <div class="form-group">
+                <label>Pilih Pelanggan</label>
+                <select id="s-pelanggan"></select>
+            </div>
+
+            <div class="form-group">
+                <label>Tanggal Pinjam</label>
+                <input type="date" id="tgl-pinjam">
+            </div>
+
+            <div class="form-group">
+                <label>Tanggal Kembali</label>
+                <input type="date" id="tgl-kembali">
+            </div>
+
+            <div class="form-group">
+                <label>Denda (Rp)</label>
+                <input type="number" id="denda" value="0">
+            </div>
+        </div>
+
+        <button id="btnSewa" class="btn-primary">
+            🚀 Pinjam Sekarang
+        </button>
+    </section>
+
+    <!-- TABEL SEWA -->
+    <section class="card">
+        <h3>📊 Daftar Mobil Sedang Dipinjam</h3>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nopol</th>
+                        <th>Penyewa</th>
+                        <th>Total Biaya</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="list-sewa"></tbody>
+            </table>
+        </div>
+    </section>
+
+</main>
+
+<script src="https://unpkg.com/dexie/dist/dexie.js"></script>
+<script src="../js/db.js"></script>
+<script src="../js/transaksi.js"></script>
+
+</body>
+</html>

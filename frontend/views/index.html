@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>LuxRide Admin Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="../assets/header.png" alt="LuxRide Logo">
+            <span>LuxRide Indonesia</span>
+        </div>
+
+        <nav>
+            <a href="admin.html" class="active">🏠 Dashboard</a>
+            <a href="mobil.html">🚗 Data Mobil</a>
+            <a href="pelanggan.html">👤 Pelanggan</a>
+            <a href="transaksi.html">📄 Transaksi</a>
+            <a href="pengembalian.html">🔄 Pengembalian Mobil</a>
+            <a href="laporan.html">📊 Laporan</a>
+        </nav>
+
+        <a href="login.html" class="logout">Logout</a>
+    </aside>
+
+    <!-- ===== MAIN ===== -->
+    <main class="main">
+
+        <!-- NOTIFICATION -->
+        <div id="notif" class="notif"></div>
+
+        <!-- TOPBAR -->
+        <div class="topbar">
+            <h2>Admin Dashboard</h2>
+            <div class="profile">👤 Admin</div>
+        </div>
+
+        <!-- ===== STATS ===== -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <h3 id="totalMobil">0</h3>
+                <p>Total Mobil</p>
+            </div>
+
+            <div class="stat-card">
+                <h3 id="totalPelanggan">0</h3>
+                <p>Total Pelanggan</p>
+            </div>
+
+            <div class="stat-card">
+                <h3 id="totalTransaksi">0</h3>
+                <p>Total Transaksi</p>
+            </div>
+
+            <div class="stat-card income">
+                <h3 id="pendapatanHari">Rp 0</h3>
+                <p>Pendapatan Hari Ini</p>
+            </div>
+
+        </section>
+
+        <!-- ===== CONTENT GRID ===== -->
+        <section class="content-grid">
+
+            <div class="box">
+                <h4>🔴 Mobil Sedang Disewa</h4>
+                <ul id="mobilDisewa">
+                    <li>Memuat data...</li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h4>📊 Aktivitas Terbaru</h4>
+                <ul id="aktivitasTerbaru">
+                    <li>Memuat data...</li>
+                </ul>
+            </div>
+            
+        </section>
+    </main>
+</div>
+
+<!-- ===== SCRIPTS ===== -->
+<script src="https://unpkg.com/dexie@3/dist/dexie.js"></script>
+<script src="../js/db.js"></script>
+<script src="../js/dashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rental Mobil SMK</title>
+    <link rel="stylesheet" href="../css/logstyle.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Login LuxRide</h1>
+            <p>Hello! Input Username And Password</p>
+        </header>
+
+        <div class="form-group">
+            <label for="email">Username</label>
+            <input type="text" id="email" placeholder="Masukkan Username">
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Masukkan Password">
+        </div>
+
+        <button onclick="Login()">Login</button>
+    </div>
+
+    <script>
+    function Login() {
+        const username = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        // Data Admin
+        const adminUsername = 'admin';
+        const adminPassword = 'admin123';
+
+        // Data User
+        const userUsername = 'user';
+        const userPassword = 'user123';
+
+        if (username === adminUsername && password === adminPassword) {
+            window.location.href = 'index.html'; // halaman admin
+        } 
+        else if (username === userUsername && password === userPassword) {
+            window.location.href = 'user.html'; // halaman user
+        } 
+        else {
+            alert('Username atau password salah. Silakan coba lagi.');
+        }
+    }
+</script>
+
+</body>
+</html>

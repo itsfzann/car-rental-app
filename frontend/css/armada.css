@@ -1,0 +1,284 @@
+/* ========================= */
+/* RESET */
+/* ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: radial-gradient(circle at top, #1a1a1a, #0f0f0f 60%);
+    color: #e5e5e5;
+    padding: 80px 8%;
+}
+
+/* ========================= */
+/* BUTTON KEMBALI */
+/* ========================= */
+
+.btn-kembali {
+    display: inline-block;
+    margin-bottom: 50px;
+    padding: 12px 22px;
+    background: transparent;
+    border: 1px solid #333;
+    color: #ccc;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.btn-kembali:hover {
+    border-color: #c9a227;
+    color: #fff;
+}
+
+/* ========================= */
+/* SEARCH BOX */
+/* ========================= */
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: #181818;
+    border: 1px solid #2a2a2a;
+    border-radius: 14px;
+    padding: 12px 15px;
+    margin-bottom: 50px;
+    max-width: 400px;
+    transition: 0.3s ease;
+}
+
+.search-box span {
+    margin-right: 10px;
+    font-size: 14px;
+    color: #888;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #f5f5f5;
+    font-size: 14px;
+    width: 100%;
+}
+
+.search-box input::placeholder {
+    color: #777;
+}
+
+.search-box:focus-within {
+    border-color: #c9a227;
+}
+
+/* ========================= */
+/* JUDUL */
+/* ========================= */
+
+.judul-armada {
+    text-align: center;
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 70px;
+    letter-spacing: -0.5px;
+    color: #f5f5f5;
+}
+
+.judul-armada::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 3px;
+    margin: 18px auto 0;
+    background: #c9a227;
+    border-radius: 5px;
+}
+
+/* ========================= */
+/* GRID */
+/* ========================= */
+
+.armada-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+/* ========================= */
+/* CARD */
+/* ========================= */
+
+.armada-card {
+    background: #121212;
+    border-radius: 18px;
+    padding: 20px;
+    min-height: 420px;
+    transition: 0.3s ease;
+    position: relative;
+    overflow: hidden; /* penting */
+}
+
+.armada-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+/* IMAGE */
+
+.armada-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 15px;
+}
+
+/* ========================= */
+/* STATUS BADGE */
+/* ========================= */
+
+.status-badge {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.status-tersedia {
+    color: #22c55e;
+}
+
+.status-disewa {
+    color: #ef4444;
+}
+
+/* ========================= */
+/* INFO */
+/* ========================= */
+
+.armada-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #f5f5f5;
+}
+
+.armada-info p {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #a3a3a3;
+}
+
+/* ========================= */
+/* BUTTON */
+/* ========================= */
+
+.armada-info button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 18px;
+    border-radius: 12px;
+    border: 1px solid #c9a227;
+    background: transparent;
+    color: #c9a227;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.armada-info button:hover {
+    background: #c9a227;
+    color: #111;
+}
+
+/* ========================= */
+/* FORM BOOKING (OVERLAY MODE) */
+/* ========================= */
+
+.form-booking {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #111;
+    padding: 20px;
+    border-top: 1px solid #2a2a2a;
+
+    transform: translateY(100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s ease;
+    z-index: 10;
+}
+
+.form-booking.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ========================= */
+/* INPUT & SELECT */
+/* ========================= */
+
+.form-booking input,
+.form-booking select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    background: #121212;
+    color: #f5f5f5;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.form-booking input:focus,
+.form-booking select:focus {
+    border-color: #c9a227;
+    outline: none;
+}
+
+/* ========================= */
+/* TOTAL */
+/* ========================= */
+
+.total-harga {
+    margin-top: 14px;
+    font-weight: 600;
+    font-size: 15px;
+    color: #c9a227;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 1024px) {
+    .armada-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 40px 6%;
+    }
+
+    .judul-armada {
+        font-size: 28px;
+    }
+
+    .armada-grid {
+        grid-template-columns: 1fr;
+    }
+}

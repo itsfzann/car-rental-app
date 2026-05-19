@@ -1,0 +1,143 @@
+/* Reset sederhana */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #f4f6f9;
+    padding: 30px;
+}
+
+/* Container utama */
+.container {
+    max-width: 1000px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* Navigasi */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.btn-kembali {
+    text-decoration: none;
+    background: #6c757d;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-kembali:hover {
+    background: #5a6268;
+}
+
+.btn-cetak {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-cetak:hover {
+    background: #0056b3;
+}
+
+/* Kop laporan */
+.kop-laporan {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.kop-laporan h1 {
+    color: #007bff;
+    margin-bottom: 5px;
+}
+
+.kop-laporan p {
+    font-size: 16px;
+}
+
+.garis {
+    margin: 15px 0 25px 0;
+    border: 1px solid #ddd;
+}
+
+/* Tabel */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+thead {
+    background: #007bff;
+    color: white;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tbody tr:hover {
+    background: #e9f2ff;
+}
+
+/* Status */
+.status-pinjam {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.status-kembali {
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* Ringkasan */
+.ringkasan {
+    text-align: right;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* Tanda tangan */
+.ttd {
+    margin-top: 60px;
+    text-align: right;
+}
+
+/* Mode Print */
+@media print {
+    .no-print {
+        display: none;
+    }
+
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+    }
+}

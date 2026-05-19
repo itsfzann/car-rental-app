@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Mobil - LuxRide Indonesia</title>
+    <link rel="stylesheet" href="../css/mobil.css">
+</head>
+<body class="mobil-page">
+
+<header class="navbar">
+    <h1>LuxRide Indonesia</h1>
+    <nav>
+        <a href="index.html">Menu Utama</a>
+        <a href="mobil.html" class="active">Data Mobil</a>
+        <a href="pelanggan.html">Data Pelanggan</a>
+        <a href="transaksi.html">Transaksi</a>
+    </nav>
+</header>
+
+<main class="container">
+
+    <!-- Form Input Mobil -->
+    <section class="card">
+        <h2>🚗 Input Data Mobil</h2>
+
+        <div class="form-grid">
+            <div class="form-group">
+                <label for="nopol">Nomor Polisi</label>
+                <input type="text" id="nopol" placeholder="Contoh: B 1234 ABC">
+            </div>
+
+            <div class="form-group">
+                <label for="merk">Merk Mobil</label>
+                <input type="text" id="merk" placeholder="Contoh: Avanza">
+            </div>
+
+            <div class="form-group">
+                <label for="harga">Harga Sewa / Hari</label>
+                <input type="number" id="harga" placeholder="Contoh: 300000">
+            </div>
+        </div>
+
+        <div class="form-group">
+    <label>Foto Mobil</label>
+
+    <label for="foto" class="custom-file">
+        📷Pilih Foto Mobil
+    </label>
+
+    <input type="file" id="foto" accept="image/*">
+</div>
+
+        <button id="btnSimpan" class="btn-primary">
+            💾 Simpan Data Mobil
+        </button>
+    </section>
+
+    <!-- Tabel Data Mobil -->
+    <!-- Tabel Data Mobil -->
+<section class="card">
+    <h3>📋 Daftar Mobil</h3>
+
+    <div class="search-box">
+        <span>🔍</span>
+        <input type="text" id="searchMobil" placeholder="Cari merk mobil...">
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>No Polisi</th>
+                <th>Merk</th>
+                <th>Harga Sewa</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody id="list-mobil"></tbody>
+    </table>
+</section>
+
+</main>
+
+<script src="https://unpkg.com/dexie@3/dist/dexie.js"></script>
+<script src="../js/db.js"></script>
+<script src="../js/mobil.js"></script>
+
+
+</body>
+</html>

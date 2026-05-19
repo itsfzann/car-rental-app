@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Pelanggan - LuxRide Indonesia</title>
+    <link rel="stylesheet" href="..//css/pelanggan.css">
+</head>
+<body>
+
+<header class="navbar">
+    <h1>LuxRide Indonesia</h1>
+    <nav>
+        <a href="index.html">Menu Utama</a>
+        <a href="mobil.html">Data Mobil</a>
+        <a href="pelanggan.html" class="active">Data Pelanggan</a>
+        <a href="transaksi.html">Transaksi</a>
+    </nav>
+</header>
+
+<main class="container">
+
+    <!-- FORM INPUT PELANGGAN -->
+    <section class="card">
+        <h2>👤 Input Data Pelanggan</h2>
+
+        <div class="form-grid">
+            <div class="form-group">
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" placeholder="Masukkan nama pelanggan">
+            </div>
+
+            <div class="form-group">
+                <label for="alamat">Alamat</label>
+                <input type="text" id="alamat" placeholder="Masukkan alamat pelanggan">
+            </div>
+
+            <div class="form-group">
+                <label for="hp">Nomor HP / WhatsApp</label>
+                <input type="text" id="hp" placeholder="Contoh: 08123456789">
+            </div>
+        </div>
+
+        <button id="btnSimpan" class="btn-primary">
+            💾 Simpan Pelanggan
+        </button>
+    </section>
+
+    <!-- TABEL DATA PELANGGAN -->
+    <section class="card">
+        <h3>📋 Daftar Pelanggan</h3>
+
+        <!-- 🔍 INPUT PENCARIAN (WAJIB UNTUK JS) -->
+    <!-- TABEL DATA PELANGGAN -->
+<section class="card">
+    <h3>Cari Nama Pelanggan</h3>
+
+    <div class="search-box">
+        <span>🔍</span>
+        <input type="text" id="searchPelanggan" placeholder="Cari nama pelanggan...">
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Alamat</th>
+                <th>No. HP</th>
+                <th style="width:140px;">Aksi</th>
+            </tr>
+        </thead>
+        <tbody id="list-pelanggan"></tbody>
+    </table>
+</section>
+</main>
+
+<script src="https://unpkg.com/dexie/dist/dexie.js"></script>
+<script src="../js/db.js"></script>
+<script src="../js/pelanggan.js"></script>
+
+</body>
+</html>
